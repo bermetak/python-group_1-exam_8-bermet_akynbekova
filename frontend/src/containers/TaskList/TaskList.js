@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 import {TASKS_URL} from '../../urls';
 import TaskCard from '../../components/TaskCard/TaskCard';
+import {NavLink} from "react-router-dom";
 
 class TaskList extends Component {
 
@@ -31,6 +32,7 @@ class TaskList extends Component {
         });
 
         return <Fragment>
+            <NavLink to='tasks/add' className="mt-3 btn btn-primary">Add task</NavLink>
             <div className='row'>
                 <div className='col-4 mt-3'>
                     <h3 className='text-center'>Очередь</h3>

@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 class TaskSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='api:task-detail')
-    status_display = serializers.CharField(source='get_status_display')
+    status_display = serializers.CharField(source='get_status_display', read_only=True)
 
     class Meta:
         model = Task
