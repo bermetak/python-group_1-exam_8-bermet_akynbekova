@@ -54,14 +54,12 @@ class TaskDetail extends Component {
     formSubmitted = (event) => {
         event.preventDefault();
 
-        // блокировка отправки формы на время выполнения запроса
         this.setState(prevState => {
             let newState = {...prevState};
             newState.submitDisabled = true;
             return newState;
         });
 
-        // отправка запроса
         console.log(TASKS_URL, this.state.task);
         console.log(TASKS_URL + this.state.task.id,)
         axios.put(TASKS_URL + this.state.task.id + '/', this.state.task)
